@@ -1,5 +1,9 @@
 package com.yaolala.dobigthing.entity;
-
+/**
+ * 实体类
+ * @author liaoxiaojin
+ *
+ */
 public class User {
 	private int id;
 	private int age;
