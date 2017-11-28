@@ -10,7 +10,7 @@ public class DBConfig {
 	private static Properties prop = new Properties();    
     static{        
         try {
-            //加载dbconfig.properties配置文件
+            //加载jdbc.propertiess配置文件
             prop.load(DBConfig.class.getResourceAsStream("/jdbc.properties"));
         } catch (IOException e) {
         		logger.error("读取资源文件失败", e);
