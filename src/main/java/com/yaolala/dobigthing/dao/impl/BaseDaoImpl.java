@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.yaolala.dobigthing.dao.IBaseDao;
+import com.yaolala.dobigthing.util.DBUtil;
 
 public class BaseDaoImpl implements IBaseDao {
 
@@ -16,8 +17,9 @@ public class BaseDaoImpl implements IBaseDao {
 
 	@Override
 	public List<Object[]> query(String sql, Object[] args) {
-		// TODO Auto-generated method stub
-		return null;
+		DBUtil dbUtil = new DBUtil();
+		List<Object[]> result = dbUtil.query(sql, args); 
+		return result;
 	}
 
 	@Override
