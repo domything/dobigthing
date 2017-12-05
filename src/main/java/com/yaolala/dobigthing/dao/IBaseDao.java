@@ -1,5 +1,6 @@
 package com.yaolala.dobigthing.dao;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ public interface IBaseDao {
 	 * @return
 	 */
 	List<Map<String, String>> executeQuery(String sql, Object[] params);
+	
+	List<Object[]> query(String sql, Object[] args);
 	
 	/**
 	 * 执行sql更新操作

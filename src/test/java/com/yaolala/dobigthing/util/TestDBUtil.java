@@ -3,6 +3,7 @@ package com.yaolala.dobigthing.util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class TestDBUtil {
     		Connection conn = DBUtil.getConnection();
     		String sql="insert into t_user values (?,?,?)";
     		PreparedStatement pstmt = null;
-    		User u = new User(10, 20, "yaolala");
+    		User u = new User(11, 24, "liaoxiaojin");
         try {
             conn = DBUtil.getConnection();
             pstmt = conn.prepareStatement(sql);
@@ -45,6 +46,18 @@ public class TestDBUtil {
         }
     		boolean b = (conn == null);
     		Assert.assertEquals(false, b);
+    }
+	
+	@Test
+    public void testQuery() {
+    	String sql = "select * from t_user ";
+    	DBUtil dbUtil = new DBUtil();
+    	List<Object[]> list = dbUtil.query(sql, new Object[0]);
+    	for (Object[] objects : list) {
+    		for (int j = 0; j < objects.length; j++) {
+    			System.out.println(objects[j]);
+			}
+		}
     }
    
 
