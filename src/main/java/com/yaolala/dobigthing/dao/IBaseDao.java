@@ -8,7 +8,7 @@ public interface IBaseDao {
 
 	/**
 	 * 执行sql查询
-	 * @param sql
+	 * @param sqls
 	 * @param params
 	 * @return
 	 */
